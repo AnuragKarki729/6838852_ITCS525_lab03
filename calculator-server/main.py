@@ -43,7 +43,7 @@ def calculate(expr: str):
 
 @app.get("/history")
 def get_history(limit: int = 50):
-    return list(history)[-50]
+    return list(history)[-limit:]
 
 # TODO DELETE /history
 @app.delete("/history")
