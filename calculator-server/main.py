@@ -34,7 +34,7 @@ def calculate(expr: str):
             aeval.error.clear()
             return {"ok": False, "expr": expr, "result": "", "error": msg}
         # TODO: Add history
-        history.append({"timestamp": datetime.isoformat() + "Z", "expr":expr, "result":result})
+        history.append({"timestamp": datetime.utcnow().isoformat() + "Z", "expr":expr, "result":result})
         return {"ok": True, "expr": expr, "result": result, "error": ""}
     except Exception as e:
         return {"ok": False, "expr": expr, "error": str(e)}
